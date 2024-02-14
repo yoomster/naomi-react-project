@@ -31,6 +31,7 @@ function App() {
       <h1>To do list</h1>
       <ul>
         {todoList}
+
       <CoreToDoList {...TO_DO_LIST[0]} />
       <CoreToDoList {...TO_DO_LIST[1]} />
       <CoreToDoList {...TO_DO_LIST[2]} />

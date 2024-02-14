@@ -1,14 +1,14 @@
 export const TO_DO_LIST = [
     {
-        completed: "false",
+        // completed: "false",
         description: "Do dishes" 
     },
     {
-        completed: "false",
+        // completed: "false",
         description: "Do laundry"
     },
     {
-        completed: "false",
+        // completed: "false",
         description: "Do groceries"
     }
 ];
