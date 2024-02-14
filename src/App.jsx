@@ -2,9 +2,8 @@ import { useState } from "react";
 /* eslint-disable react/prop-types */
 import calendarImg from "./assets/calendar-icon.png";
 import './App.css'
-import { TO_DO_LIST } from "./components/data.js";
+import RenderToDoList from "./components/data.jsx";
 import UserInput from "./components/ToDo.jsx"
-import Button from "./components/Button.jsx";
 
 
 function CoreToDoList ({description}){
@@ -18,10 +17,8 @@ function CoreToDoList ({description}){
 function App() {
   const [todoList, setTodoList] = useState();
 
-  function handleClick() {
-    console.log("clicked");
-}
-  
+
+ 
   return (
     <>
       { <div>
@@ -30,14 +27,9 @@ function App() {
       
       <h1>To do list</h1>
       <ul>
-        {todoList}
-
-      <CoreToDoList {...TO_DO_LIST[0]} />
-      <CoreToDoList {...TO_DO_LIST[1]} />
-      <CoreToDoList {...TO_DO_LIST[2]} />
+        <RenderToDoList />
       </ul>
       <UserInput />
-      <Button onSelect = {() => handleClick()} />
     </>
   )
 }
