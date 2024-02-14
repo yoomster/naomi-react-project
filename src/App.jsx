@@ -3,22 +3,11 @@ import { useState } from "react";
 import calendarImg from "./assets/calendar-icon.png";
 import './App.css'
 import RenderToDoList from "./components/data.jsx";
-import UserInput from "./components/ToDo.jsx"
 
-
-function CoreToDoList ({description}){
-  return(
-    <li> 
-      <h3>{description}</h3>
-    </li>
-  )
-}
 
 function App() {
   const [todoList, setTodoList] = useState();
 
-
- 
   return (
     <>
       { <div>
@@ -26,10 +15,15 @@ function App() {
       </div> }
       
       <h1>To do list</h1>
-      <ul>
-        <RenderToDoList />
-      </ul>
-      <UserInput />
+      <RenderToDoList />
+
+      <section id="user-input">
+      <p>
+          <label>New to do item</label>
+          <input type= "text" required />
+      </p>
+  </section>
+      <button onClick={() =>{alert( {} )} }> Add </button>
     </>
   )
 }
