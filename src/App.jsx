@@ -10,22 +10,6 @@ const initialActivities = [
   { id: 3, description: 'Do laundry', completed: false },
 ];
 
-const items = initialActivities.map(activity =>
-  <li key={activity.id}>
-    
-    <input type="checkbox" 
-      checked={initialActivities.completed}
-
-    
-    />
-      {activity.description}
-
-      <button onClick={() => initialActivities (activity.id)}>
-        Delete
-      </button>
-  </li> )
-
-
 function App() {
   const [toDoList, setToDoList] = useState(initialActivities);
   const [toDoDescription, setToDoDescription] = useState('');
@@ -38,8 +22,13 @@ function App() {
         description: description,
         completed: false
       } 
-    ],
-    console.log("hi"));
+    ])
+  }
+
+  function handleDelete(activityId){
+    setToDoList(
+      toDoList.filter(a => a.id !== activityId)
+    )
   }
 
   return (
@@ -49,20 +38,23 @@ function App() {
       </div> }
       
       <h1>To do list</h1>
-      <ul>
       {toDoList.map(activity =>
        <li key={activity.id}>
+
+        <input type="checkbox" 
+         checked={initialActivities.completed}
+        />
+
         {activity.description}
-        {activity.id}
-        {activity.done}
 
-
+        <button onClick={() => 
+          handleDelete (activity.id)
+        }> Delete </button>
        </li>)
+      }
 
-    }
 
 
-      </ul>
 
       <p>
         <label>Add a new to do item to your list </label>
@@ -76,9 +68,7 @@ function App() {
           setToDoDescription('');
           handleAddToDo (toDoDescription)} 
         }> Add </button>
-
       </p>
-
     </>
   )
 }
