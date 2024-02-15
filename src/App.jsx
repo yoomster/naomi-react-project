@@ -12,9 +12,16 @@ const initialActivities = [
 
 const items = initialActivities.map(activity =>
   <li key={activity.id}>
-    <input type="checkbox" />
+    <input type="checkbox" 
+      checked={initialActivities.completed}
+
+    
+    />
       {activity.description}
-      <button type="delete"  />
+
+      <button onClick={() => initialActivities (activity.id)}>
+        Delete
+      </button>
   </li> )
 
 
@@ -28,9 +35,8 @@ function App() {
       ...toDoList, 
       { id: nextId++, 
         description: description,
-      completed: false
+        completed: false
       } ]);
-    console.log('hi');
   }
 
   return (
@@ -42,14 +48,21 @@ function App() {
       <h1>To do list</h1>
       <ul>{items}</ul>
 
-
-      <section id="user-input">
       <p>
-          <label>New to do item</label>
-          <input type= "text" required value={toDoDescription} onChange={e => setToDoDescription(e.target.value)}/>
+        <label>Add a new to do item to your list </label>
+        <br />
+        <input
+          value={toDoDescription} 
+          onChange={e => setToDoDescription(e.target.value)}
+        />
+
+        <button onClick={() =>{
+          setToDoDescription('');
+          handleAddToDo (toDoDescription)} 
+        }> Add </button>
+
       </p>
-      </section>
-      <button onClick={() =>{handleAddToDo} }> Add </button>
+
     </>
   )
 }
