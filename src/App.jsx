@@ -3,7 +3,7 @@ import { useState } from "react";
 import calendarImg from "./assets/calendar-icon.png";
 import './App.css'
 
-let nextId = 3;
+let nextId = 4;
 const initialActivities = [
   { id: 1, description: 'Do dishes', completed: true },
   { id: 2, description: 'Do groceries', completed: false },
@@ -12,6 +12,7 @@ const initialActivities = [
 
 const items = initialActivities.map(activity =>
   <li key={activity.id}>
+    
     <input type="checkbox" 
       checked={initialActivities.completed}
 
@@ -36,7 +37,9 @@ function App() {
       { id: nextId++, 
         description: description,
         completed: false
-      } ]);
+      } 
+    ],
+    console.log("hi"));
   }
 
   return (
@@ -46,7 +49,20 @@ function App() {
       </div> }
       
       <h1>To do list</h1>
-      <ul>{items}</ul>
+      <ul>
+      {toDoList.map(activity =>
+       <li key={activity.id}>
+        {activity.description}
+        {activity.id}
+        {activity.done}
+
+
+       </li>)
+
+    }
+
+
+      </ul>
 
       <p>
         <label>Add a new to do item to your list </label>
