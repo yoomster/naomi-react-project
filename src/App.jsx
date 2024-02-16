@@ -2,6 +2,7 @@ import { useState } from "react";
 /* eslint-disable react/prop-types */
 import calendarImg from "./assets/calendar-icon.png";
 import './App.css'
+import TaskDialog from "./TaskDialog";
 
 let nextId = 4;
 const initialActivities = [
@@ -13,6 +14,7 @@ const initialActivities = [
 function App() {
   const [toDoList, setToDoList] = useState(initialActivities);
   const [toDoDescription, setToDoDescription] = useState('');
+  const [isEditing, setIsEditing] = useState(false);
 
 
   function handleAddToDo (description) {
@@ -31,6 +33,30 @@ function App() {
     )
   }
 
+  function handleChangeToDo(index){
+    console.log(index)
+    // const nextItems = toDoList.map( (t, i) =>{
+    //   if (i === index)
+    //   {
+    //     return console.log('test');
+    //   }
+    //   else 
+    //   {
+    //     // return t;
+    //     return console.log('poop');
+
+    //   }
+    //   // setForm({
+    //   //   ...toDoList,
+    //   //   description: INPUTBOX 
+    //   // });
+    // })
+    
+    // setToDoList ( nextItems
+    // )
+  }
+
+
   return (
     <>
       { <div>
@@ -39,18 +65,28 @@ function App() {
       
       <h1>To do list</h1>
       {toDoList.map(activity =>
-       <li key={activity.id}>
 
+      
+       <ul key={activity.id}>
+        
         <input type="checkbox" 
          checked={initialActivities.completed}
         />
-
         {activity.description}
 
         <button onClick={() => 
           handleDelete (activity.id)
         }> Delete </button>
-       </li>)
+
+        <button onClick={() => {
+          setIsEditing(true);
+          
+          handleChangeToDo (activity) }
+        }> Change </button>
+        <TaskDialog taskDescription={activity.description}/>
+
+        
+       </ul>)
       }
 
 
@@ -74,4 +110,3 @@ function App() {
 }
 
 export default App
-
