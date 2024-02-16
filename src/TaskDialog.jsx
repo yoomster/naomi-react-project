@@ -20,17 +20,12 @@ export default function TaskDialog({task, onSubmit}) {
 
   const handleTaskChange = (e) => {
     setEditedTask(e.target.value);
-    //setEditedTask(e.target.value); // Update the edited task as user types
   };
- 
-//   const handleSubmit = () => {
-//     console.log('klik')
-//   }
 
   return (
     <React.Fragment>
       <Button variant="outlined" onClick={handleClickOpen}>
-        Open form dialog
+        Edit
       </Button>
       <Dialog
         open={open}
