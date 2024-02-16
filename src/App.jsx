@@ -32,12 +32,15 @@ function App() {
     )
   }
 
-  function parentOnSubmit(task){
-    // setToDoList(task.map() => {
+  function parentOnSubmit(taskId, taskDescription) {
+      // new list from .map on old
+    const newList = toDoList.map(task =>
+      task.id === taskId ? {...task, description: taskDescription} : task
+      );
 
-    // })
-    console.log('Petting snuggles ')
+    setToDoList(newList);
   }
+
   return (
     <>
       { <div>
