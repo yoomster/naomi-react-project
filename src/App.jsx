@@ -14,7 +14,6 @@ const initialActivities = [
 function App() {
   const [toDoList, setToDoList] = useState(initialActivities);
   const [toDoDescription, setToDoDescription] = useState('');
-  const [isEditing, setIsEditing] = useState(false);
 
 
   function handleAddToDo (description) {
@@ -33,30 +32,12 @@ function App() {
     )
   }
 
-  function handleChangeToDo(index){
-    console.log(index)
-    // const nextItems = toDoList.map( (t, i) =>{
-    //   if (i === index)
-    //   {
-    //     return console.log('test');
-    //   }
-    //   else 
-    //   {
-    //     // return t;
-    //     return console.log('poop');
+  function parentOnSubmit(task){
+    // setToDoList(task.map() => {
 
-    //   }
-    //   // setForm({
-    //   //   ...toDoList,
-    //   //   description: INPUTBOX 
-    //   // });
     // })
-    
-    // setToDoList ( nextItems
-    // )
+    console.log('Petting snuggles ')
   }
-
-
   return (
     <>
       { <div>
@@ -78,19 +59,13 @@ function App() {
           handleDelete (activity.id)
         }> Delete </button>
 
-        <button onClick={() => {
-          setIsEditing(true);
-          
-          handleChangeToDo (activity) }
-        }> Change </button>
-        <TaskDialog taskDescription={activity.description}/>
+         <TaskDialog 
+          task={activity} 
+          onSubmit={parentOnSubmit}
+          />
 
-        
        </ul>)
       }
-
-
-
 
       <p>
         <label>Add a new to do item to your list </label>
