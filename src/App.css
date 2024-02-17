@@ -42,20 +42,20 @@
 }
 
 .round-button {
-  display: inline-flex; /* Display the button as inline-flex */
+  display: inline-flex; 
   align-items: center; /* Align items vertically */
-  width: 50px; /* Allow the button to adjust its width based on content */
-  height: 50px; /* Set the height */
-  border-radius: 50%; /* Make the button round */
-  background-color: none; /* Change the background color to your desired color */
-  color: #61dafbaa; /* Change the text color to white */
-  border: #61dafbaa; /* Remove the border */
+  width: 50px; 
+  height: 50px; 
+  border-radius: 50%; 
+  background-color: none; 
+  color: #61dafbaa; 
+  border: #61dafbaa; 
   padding: 5px 12px; /* Add padding for better spacing */
-  cursor: pointer; /* Show pointer cursor on hover */
+  cursor: pointer; 
 }
 
 .round-button:hover {
-  background-color: #646cffaa; /* Change the background color on hover */
+  background-color: #646cffaa; 
 }
 
 .round-button .material-icons {

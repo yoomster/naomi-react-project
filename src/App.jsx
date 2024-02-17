@@ -3,6 +3,7 @@ import { useState } from "react";
 import calendarImg from "./assets/calendar-icon.png";
 import './App.css'
 import TaskDialog from "./TaskDialog";
+import ControlledCheckbox from "./CheckBox.jsx"
 
 
 let nextId = 4;
@@ -15,7 +16,11 @@ const initialActivities = [
 function App() {
   const [toDoList, setToDoList] = useState(initialActivities);
   const [toDoDescription, setToDoDescription] = useState('');
+  const [done, setDone] = useState(false);
 
+  function handleDone (){
+    console.log('hi')
+  }
 
   function handleAddToDo (description) {
     setToDoList([
@@ -54,10 +59,17 @@ function App() {
       
        <ul key={activity.id}>
         
-        <input type="checkbox" 
-         checked={initialActivities.completed}
+        <ControlledCheckbox 
+        onChange={handleDone}
         />
+
         {activity.description}
+
+         <TaskDialog 
+          task={activity} 
+          onSubmit={parentOnSubmit}
+          />
+          
 
         <button 
         className="round-button"
@@ -67,11 +79,6 @@ function App() {
         delete
         </span>
          </button>
-
-         <TaskDialog 
-          task={activity} 
-          onSubmit={parentOnSubmit}
-          />
 
        </ul>)
       }
@@ -83,6 +90,7 @@ function App() {
           value={toDoDescription} 
           onChange={e => setToDoDescription(e.target.value)}
         />
+
 
 
 
