@@ -4,6 +4,7 @@ import calendarImg from "./assets/calendar-icon.png";
 import './App.css'
 import TaskDialog from "./TaskDialog";
 
+
 let nextId = 4;
 const initialActivities = [
   { id: 1, description: 'Do dishes', completed: true },
@@ -58,9 +59,14 @@ function App() {
         />
         {activity.description}
 
-        <button onClick={() => 
+        <button 
+        className="round-button"
+        onClick={() => 
           handleDelete (activity.id)
-        }> Delete </button>
+        }> <span className="material-icons">
+        delete
+        </span>
+         </button>
 
          <TaskDialog 
           task={activity} 
@@ -78,10 +84,17 @@ function App() {
           onChange={e => setToDoDescription(e.target.value)}
         />
 
-        <button onClick={() =>{
+
+
+        <button 
+        className="round-button"
+        onClick={() =>{
           setToDoDescription('');
           handleAddToDo (toDoDescription)} 
-        }> Add </button>
+          
+        }>
+         <i className="material-icons">add</i>
+          </button>
       </p>
     </>
   )
