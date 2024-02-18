@@ -7,13 +7,21 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import { GlobalContext} from './App';
 
-export default function AddTaskDialog({onSubmit}) {
+export default function AddTaskDialog() {
   const [toDo, setToDo] = React.useState('');
   const [open, setOpen] = React.useState(false);
   const [toDoList, setToDoList] = React.useContext(GlobalContext);
   console.log(toDoList)
 
-  
+  function newOnAdd (description) {
+    setToDoList([
+      ...toDoList, 
+      { id: toDoList.length + 1, 
+        description: description,
+        completed: false
+      } 
+    ])
+  }
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -43,7 +51,7 @@ export default function AddTaskDialog({onSubmit}) {
           component: 'form',
           onSubmit: (event) => {
             event.preventDefault();
-            onSubmit(toDo)
+            newOnAdd(toDo)
             handleClose();
           },
         }}

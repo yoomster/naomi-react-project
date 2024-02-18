@@ -8,12 +8,19 @@ import DialogTitle from '@mui/material/DialogTitle';
 
 import {GlobalContext} from "./App" 
 
-export default function EditTaskDialog({task, onSubmit}) {
+export default function EditTaskDialog({task}) {
   const [open, setOpen] = React.useState(false);
   const [editedTask, setEditedTask] = React.useState(task.description);
   const [toDoList, setToDoList] = React.useContext(GlobalContext);
 
+  function newOnSubmit(activityId, activityDescription) {
+    // new list from .map on old
+  const newList = toDoList.map(activity =>
+    activity.id === activityId ? {...activity, description: activityDescription} : activity
+    );
 
+  setToDoList(newList);
+}
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -38,7 +45,7 @@ export default function EditTaskDialog({task, onSubmit}) {
           component: 'form',
           onSubmit: (event) => {
             event.preventDefault();
-            onSubmit(task.id, editedTask)
+            newOnSubmit(task.id, editedTask)
             handleClose();
           },
         }}

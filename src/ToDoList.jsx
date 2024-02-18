@@ -7,7 +7,6 @@ import ControlledCheckbox from "./CheckBox.jsx"
 
 import {GlobalContext} from "./App.jsx";
 
-let nextId = 4;
 // const initialActivities = [
 //   { id: 1, description: 'Do dishes', completed: true },
 //   { id: 2, description: 'Do groceries', completed: false },
@@ -23,29 +22,11 @@ export default function ToDoList() {
     console.log('done')
   }
 
-  function parentOnAdd (description) {
-    setToDoList([
-      ...toDoList, 
-      { id: nextId++, 
-        description: description,
-        completed: false
-      } 
-    ])
-  }
 
   function handleDelete(activityId){
     setToDoList(
       toDoList.filter(a => a.id !== activityId)
     )
-  }
-
-  function parentOnSubmit(activityId, activityDescription) {
-      // new list from .map on old
-    const newList = toDoList.map(activity =>
-      activity.id === activityId ? {...activity, description: activityDescription} : activity
-      );
-
-    setToDoList(newList);
   }
 
   return (
@@ -66,7 +47,6 @@ export default function ToDoList() {
 
          <EditTaskDialog 
           task={activity} 
-          onSubmit={parentOnSubmit}
           />
           
 
@@ -87,7 +67,6 @@ export default function ToDoList() {
         <label>Add a new to do item to your list </label>
         <br />
           <AddTaskDialog 
-          onSubmit={parentOnAdd}
           />
       </p>
     </>
