@@ -2,7 +2,9 @@ import { useState } from "react";
 /* eslint-disable react/prop-types */
 import calendarImg from "./assets/calendar-icon.png";
 import './App.css'
-import TaskDialog from "./TaskDialog";
+import EditTaskDialog from "./EditTaskDialog.jsx";
+import AddTaskDialog from "./AddTaskDialog.jsx";
+
 import ControlledCheckbox from "./CheckBox.jsx"
 
 
@@ -16,13 +18,13 @@ const initialActivities = [
 function App() {
   const [toDoList, setToDoList] = useState(initialActivities);
   const [toDoDescription, setToDoDescription] = useState('');
-  const [done, setDone] = useState(false);
+  // const [done, setDone] = useState(false);
 
   function handleDone (){
-    console.log('hi')
+    console.log('done')
   }
 
-  function handleAddToDo (description) {
+  function parentOnAdd (description) {
     setToDoList([
       ...toDoList, 
       { id: nextId++, 
@@ -38,10 +40,10 @@ function App() {
     )
   }
 
-  function parentOnSubmit(taskId, taskDescription) {
+  function parentOnSubmit(activityId, activityDescription) {
       // new list from .map on old
-    const newList = toDoList.map(task =>
-      task.id === taskId ? {...task, description: taskDescription} : task
+    const newList = toDoList.map(activity =>
+      activity.id === activityId ? {...activity, description: activityDescription} : activity
       );
 
     setToDoList(newList);
@@ -65,7 +67,7 @@ function App() {
 
         {activity.description}
 
-         <TaskDialog 
+         <EditTaskDialog 
           task={activity} 
           onSubmit={parentOnSubmit}
           />
@@ -86,15 +88,11 @@ function App() {
       <p>
         <label>Add a new to do item to your list </label>
         <br />
-        <input
+        {/* <input
           value={toDoDescription} 
           onChange={e => setToDoDescription(e.target.value)}
-        />
-
-
-
-
-        <button 
+        /> */}
+        {/* <button 
         className="round-button"
         onClick={() =>{
           setToDoDescription('');
@@ -102,7 +100,11 @@ function App() {
           
         }>
          <i className="material-icons">add</i>
-          </button>
+          </button> */}
+          <AddTaskDialog 
+          onSubmit={parentOnAdd}
+          />
+      
       </p>
     </>
   )
