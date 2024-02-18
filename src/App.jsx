@@ -7,9 +7,8 @@ import './App.css'
 
 import ToDoList from "./ToDoList";
 
-export const Context = React.createContext();
+export const GlobalContext = React.createContext();
 
-// let nextId = 4;
 const initialActivities = [
   { id: 1, description: 'Do dishes', completed: true },
   { id: 2, description: 'Do groceries', completed: false },
@@ -21,10 +20,9 @@ function App() {
 
   return (
     
-    <Context.Provider value= {[toDoList, setToDoList]}> 
-    <ToDoList />
-
-    </Context.Provider>
+    <GlobalContext.Provider value= {[toDoList, setToDoList]}> 
+      <ToDoList />
+    </GlobalContext.Provider>
   
   )
 }

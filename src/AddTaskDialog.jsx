@@ -1,0 +1,75 @@
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogTitle from '@mui/material/DialogTitle';
+import { GlobalContext} from './App';
+
+export default function AddTaskDialog({onSubmit}) {
+  const [toDo, setToDo] = React.useState('');
+  const [open, setOpen] = React.useState(false);
+  const [toDoList, setToDoList] = React.useContext(GlobalContext);
+  console.log(toDoList)
+
+  
+
+  const handleClickOpen = () => {
+    setOpen(true);
+    setToDo('');
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleAddTask = (e)=>{
+    setToDo(e.target.value);
+  }
+
+  return (
+    <React.Fragment>
+      <Button 
+      variant="outlined" 
+      onClick={handleClickOpen}>
+        Add new item
+      </Button>
+
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        PaperProps={{
+          component: 'form',
+          onSubmit: (event) => {
+            event.preventDefault();
+            onSubmit(toDo)
+            handleClose();
+          },
+        }}
+      >
+        <DialogTitle>Add new activity</DialogTitle>
+        <DialogContent>
+
+          <TextField
+            autoFocus
+            required
+            margin="dense"
+            id="taskFieldName"
+            name="taskFieldName"
+            label="New to do"
+            value={toDo}
+            onChange={handleAddTask}
+            type="text"
+            fullWidth
+            variant="standard"
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button type="submit">Add</Button>
+        </DialogActions>
+      </Dialog>
+    </React.Fragment>
+  );
+}
