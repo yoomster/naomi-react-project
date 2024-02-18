@@ -88,23 +88,9 @@ function App() {
       <p>
         <label>Add a new to do item to your list </label>
         <br />
-        {/* <input
-          value={toDoDescription} 
-          onChange={e => setToDoDescription(e.target.value)}
-        /> */}
-        {/* <button 
-        className="round-button"
-        onClick={() =>{
-          setToDoDescription('');
-          handleAddToDo (toDoDescription)} 
-          
-        }>
-         <i className="material-icons">add</i>
-          </button> */}
           <AddTaskDialog 
           onSubmit={parentOnAdd}
           />
-      
       </p>
     </>
   )

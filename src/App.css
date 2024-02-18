@@ -47,15 +47,18 @@
   width: 50px; 
   height: 50px; 
   border-radius: 50%; 
-  background-color: none; 
-  color: #61dafbaa; 
-  border: #61dafbaa; 
+  background-color: #242424; 
+  color: rgb( 0, 105, 210); 
+  border: #448aff; 
   padding: 5px 12px; /* Add padding for better spacing */
   cursor: pointer; 
 }
 
 .round-button:hover {
-  background-color: #646cffaa; 
+  /* background-color: #82b1ff;  */
+  border: 0.5rem #448aff; 
+  
+
 }
 
 .round-button .material-icons {
