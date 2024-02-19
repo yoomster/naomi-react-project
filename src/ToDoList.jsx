@@ -7,14 +7,6 @@ import ControlledCheckbox from "./CheckBox.jsx"
 
 import {GlobalContext} from "./App.jsx";
 
-// const initialActivities = [
-//   { id: 1, description: 'Do dishes', completed: true },
-//   { id: 2, description: 'Do groceries', completed: false },
-//   { id: 3, description: 'Do laundry', completed: false },
-// ];
-
-
-
 export default function ToDoList() {
   const [toDoList, setToDoList] = React.useContext(GlobalContext);
 

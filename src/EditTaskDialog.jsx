@@ -13,7 +13,7 @@ export default function EditTaskDialog({task}) {
   const [editedTask, setEditedTask] = React.useState(task.description);
   const [toDoList, setToDoList] = React.useContext(GlobalContext);
 
-  function newOnSubmit(activityId, activityDescription) {
+  function saveEdittedTask(activityId, activityDescription) {
     // new list from .map on old
   const newList = toDoList.map(activity =>
     activity.id === activityId ? {...activity, description: activityDescription} : activity
@@ -45,7 +45,7 @@ export default function EditTaskDialog({task}) {
           component: 'form',
           onSubmit: (event) => {
             event.preventDefault();
-            newOnSubmit(task.id, editedTask)
+            saveEdittedTask(task.id, editedTask)
             handleClose();
           },
         }}
