@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 /* eslint-disable react/prop-types */
 import './App.css'
-// import EditTaskDialog from "./EditTaskDialog.jsx";
-// import AddTaskDialog from "./AddTaskDialog.jsx";
-// import ControlledCheckbox from "./CheckBox.jsx"
 
 import ToDoList from "./ToDoList";
 

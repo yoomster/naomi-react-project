@@ -35,11 +35,10 @@ export default function ToDoList() {
 
         {activity.description}
 
-         <EditTaskDialog 
+        <EditTaskDialog 
           task={activity} 
           />
           
-
         <button 
         className="round-button"
         onClick={() => 
@@ -48,7 +47,6 @@ export default function ToDoList() {
         delete
         </span>
          </button>
-         
 
        </ul>)
       }

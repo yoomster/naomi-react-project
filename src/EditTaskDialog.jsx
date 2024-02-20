@@ -35,7 +35,12 @@ export default function EditTaskDialog({task}) {
 
   return (
     <React.Fragment>
-      <Button variant="outlined" onClick={handleClickOpen}>
+      <Button 
+        sx={{
+          margin: '15px',
+        }}
+        variant="outlined" 
+        onClick={handleClickOpen}>
         Edit
       </Button>
       <Dialog
