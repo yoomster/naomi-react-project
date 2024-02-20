@@ -22,9 +22,7 @@ export default function ToDoList() {
   }
 
   return (
-    <>
-    <GlobalContext.Provider value= {[toDoList, setToDoList]}> 
-      
+    <>     
       <h1>To do list</h1>
       {toDoList.map(activity =>
 
@@ -54,7 +52,6 @@ export default function ToDoList() {
 
        </ul>)
       }
-    </GlobalContext.Provider>
       <p>
         <label>Add a new to do item to your list </label>
         <br />

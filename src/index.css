@@ -10,8 +10,6 @@
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-
  }
   /*  
   color-scheme: light dark;
@@ -26,7 +24,7 @@
 
 .nav-bar a {
   display: block; /* show below each other */
-  text-align: center; /
+  text-align: center; 
   padding: 16px; 
   color: rgba(255, 255, 255, 0.87); 
   font-size: 30px; 
@@ -38,7 +36,7 @@
 }
 
 .active {
-  background-color: #646cff;; /* Add an active/current color */
+  background-color: rgba(25, 118, 210, 0.5); 
 }
 
 body {
@@ -67,14 +65,11 @@ h1 {
   text-decoration: none;
   background-color: rgba(25, 118, 210, 0.04);
   border: 1px solid #1976d2;
-
-
 }
 
 #user-input {
   width : 100%;
   padding : 0.5rem ;
-
 }
 
 
