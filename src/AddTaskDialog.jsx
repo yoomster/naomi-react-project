@@ -39,6 +39,9 @@ export default function AddTaskDialog() {
   return (
     <React.Fragment>
       <Button 
+         sx={{
+          margin: '15px',
+        }}
       variant="outlined" 
       onClick={handleClickOpen}>
         Add new item
