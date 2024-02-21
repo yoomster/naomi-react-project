@@ -5,7 +5,7 @@ import EditTaskDialog from "./EditTaskDialog.jsx";
 import AddTaskDialog from "./AddTaskDialog.jsx";
 import ControlledCheckbox from "./CheckBox.jsx"
 
-import {GlobalContext} from "./App.jsx";
+import {GlobalContext} from "./pages/ToDo.jsx";
 
 export default function ToDoList() {
   const [toDoList, setToDoList] = React.useContext(GlobalContext);

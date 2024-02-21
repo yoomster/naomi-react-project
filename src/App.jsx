@@ -1,27 +1,48 @@
-import React, { useState } from "react";
 /* eslint-disable react/prop-types */
+
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import ToDo from "./pages/ToDo";
+import Contact from "./pages/Contact";
+
 import './App.css'
 
-import ToDoList from "./ToDoList";
 
-export const GlobalContext = React.createContext();
-
-const initialActivities = [
-  { id: 1, description: 'Do dishes', completed: true },
-  { id: 2, description: 'Do groceries', completed: false },
-  { id: 3, description: 'Do laundry', completed: false },
-];
-
-function App() {
-  const [toDoList, setToDoList] = useState(initialActivities);
+function App () {
 
   return (
-    
-    <GlobalContext.Provider value= {[toDoList, setToDoList]}> 
-      <ToDoList />
-    </GlobalContext.Provider>
-  
+    <>  
+    <BrowserRouter>
+
+      <div className="nav-bar">
+        <ul>
+          <ol>
+            <Link to="/home">Home</Link>
+          </ol>
+          <ol>
+            <Link to="/todo">To Do list</Link>
+          </ol>
+          <ol>
+            <Link to="/about">About us</Link>
+          </ol>
+          <ol>
+            <Link to="/contact">Contact us</Link>
+          </ol>
+        </ul>
+
+    <Routes>
+      <Route  path="/" element={<Home />} />
+        <Route path="About" element={<About />} />
+        <Route path="ToDo" element={<ToDo />} />
+        <Route path="Contact" element={<Contact />} />
+    </Routes>
+    </div>
+
+  </BrowserRouter>
+  </>
   )
 }
+
 
 export default App

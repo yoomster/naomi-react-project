@@ -6,7 +6,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 
-import {GlobalContext} from "./App" 
+import {GlobalContext} from "./pages/ToDo.jsx" 
 
 export default function EditTaskDialog({task}) {
   const [open, setOpen] = React.useState(false);
