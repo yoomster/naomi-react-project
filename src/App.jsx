@@ -14,8 +14,7 @@ function App () {
     <>  
     <Grid container spacing={2}>
       <BrowserRouter>
-      <Grid md={4} >
-
+        <Grid md={4} >
           <ul className="nav-bar">
           <ol>
             <Link to="/home">Home</Link>
@@ -32,15 +31,13 @@ function App () {
           </ul>
         </Grid>
 
-
         <Grid md={8} >
           <Routes>
-
-            <Route  path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
+            <Route path="Home" element={<Home />} />
             <Route path="About" element={<About />} />
             <Route path="ToDo" element={<ToDo />} />
             <Route path="Contact" element={<Contact />} />
-
           </Routes>
         </Grid>
 

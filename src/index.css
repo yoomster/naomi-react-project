@@ -11,17 +11,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
  }
-  /*  
-  color-scheme: light dark;
-} */
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
 
 h1 {
   font-size: 3.2em;
@@ -51,7 +40,7 @@ h1 {
 }
 
 .round-button .material-icons {
-  margin-right: 25px; /* Add some spacing between the icon and text */
+  margin-right: 25px; /* spacing between icon and text */
 }
 
 #user-input {

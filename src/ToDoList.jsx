@@ -23,38 +23,36 @@ export default function ToDoList() {
 
   return (
     <>     
-      <h1>To do list</h1>
       {toDoList.map(activity =>
 
-      
-       <ul key={activity.id}>
-        
-        <ControlledCheckbox 
-        onChange={handleDone}
-        />
+      <ul key={activity.id}>
+      <ControlledCheckbox 
+         onChange={handleDone}
+      />
 
-        {activity.description}
+      {activity.description}
 
-        <EditTaskDialog 
-          task={activity} 
-          />
+      <EditTaskDialog 
+        task={activity} 
+      />
           
-        <button 
+      <button 
         className="round-button"
         onClick={() => 
-          handleDelete (activity.id)
-        }> <span className="material-icons">
+          handleDelete (activity.id)}
+      >
+      <span className="material-icons">
         delete
-        </span>
-         </button>
+      </span>
+      </button>
 
-       </ul>)
+      </ul>)
       }
+
       <p>
         <label>Add a new to do item to your list </label>
         <br />
-          <AddTaskDialog 
-          />
+        <AddTaskDialog />
       </p>
     </>
   )

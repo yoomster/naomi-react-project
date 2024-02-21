@@ -17,11 +17,13 @@ function ToDo() {
   const [toDoList, setToDoList] = useState(initialActivities);
 
   return (
+    <>
+    <h1>To do list</h1>
     
     <GlobalContext.Provider value= {[toDoList, setToDoList]}> 
       <ToDoList />
     </GlobalContext.Provider>
-  
+    </>
   )
 }
 
