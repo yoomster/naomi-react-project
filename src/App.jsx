@@ -28,20 +28,14 @@ function App () {
     <Grid container spacing={3}>
       <BrowserRouter>
         <Grid md={3} >
-          <ul className="nav-bar">
-          <ol>
+          {/* <ul className="nav-bar"> */}
+          <ol className="nav-bar">
             <NavLink to="/" activeClassName="active">Home</NavLink>
-          </ol>
-          <ol>
             <NavLink to="/todo" activeClassName="active">To dos</NavLink>
-          </ol>
-          <ol>
             <NavLink to="/about" activeClassName="active">About us</NavLink>
-          </ol>
-          <ol>
             <NavLink to="/contact" activeClassName="active">Contact us</NavLink>
           </ol>
-          </ul>
+          {/* </ul> */}
         </Grid>
 
         <Grid md={9} >

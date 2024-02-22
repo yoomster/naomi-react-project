@@ -1,12 +1,15 @@
 #root {
-  /* max-width: 100vh; */
   margin: 0 auto;
   padding: 1px;
-  /* text-align: left; */
+  text-align: left;
 }
 
 h1 {
-  font-size: 3.2em;
+  line-height: 1.1;
+  padding: 3px; 
+  margin: 25px;
+}
+h2 {
   line-height: 1.1;
   padding: 3px; 
   margin: 25px;
@@ -23,6 +26,17 @@ h1 {
   margin: 0;
   padding: 0;
 }
+.nav-bar ol{
+  width: 100%;
+  margin: 15px;
+  
+}
+
+.nav-bar ol:hover{
+  width: 100%;
+  background-color: #242424; 
+
+}
 
 .nav-bar a {
   padding: 3px; 
@@ -30,16 +44,15 @@ h1 {
   color: rgba(255, 255, 255, 0.87); 
   text-decoration: none;
   display: flex;
-  float: left;
-}
+  /* float: left; */
+  width: 100%;
 
-.nav-bar a:hover {
-  background-color: #242424; 
 }
 
 .nav-bar a.active {
   background-color: #242424; 
   color: rgba(255, 255, 255, 0.87); 
+  width: 100%;
 }
 
 .round-button{

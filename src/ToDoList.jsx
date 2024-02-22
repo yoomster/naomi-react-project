@@ -50,7 +50,7 @@ export default function ToDoList() {
       }
 
       <p>
-        <label>Add a new to do item to your list </label>
+        <h2>Add a new to do item to your list </h2>
         <br />
         <AddTaskDialog />
       </p>

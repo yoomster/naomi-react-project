@@ -8,7 +8,7 @@ function Home () {
     <>
     <h1> Welcome! </h1>
     <div>
-      <h3> Today you have {toDoList.length} tasks to do </h3>
+      <h2> Today you have {toDoList.length} tasks to do.</h2>
     </div>
     </>
   )
