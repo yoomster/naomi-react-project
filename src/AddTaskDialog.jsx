@@ -5,13 +5,14 @@ import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
-import { GlobalContext} from './pages/ToDo.jsx';
+// import { GlobalContext} from './pages/ToDo.jsx';
+import {GlobalContext} from "../src/App.jsx";
+
 
 export default function AddTaskDialog() {
   const [toDo, setToDo] = React.useState('');
   const [open, setOpen] = React.useState(false);
   const [toDoList, setToDoList] = React.useContext(GlobalContext);
-  console.log(toDoList)
 
   function newOnAdd (description) {
     setToDoList([

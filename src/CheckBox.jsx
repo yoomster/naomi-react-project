@@ -2,7 +2,7 @@ import * as React from 'react';
 import Checkbox from '@mui/material/Checkbox';
 
 export default function ControlledCheckbox(onChange) {
-  const [checked, setChecked] = React.useState(false);
+    const [checked, setChecked] = React.useState(false);
   
 
 //event handler klopt 

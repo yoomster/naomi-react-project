@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import ToDo from "./pages/ToDo";
@@ -9,29 +9,44 @@ import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 
 import './App.css'
 
+import React, { useState } from "react";
+
+export const GlobalContext = React.createContext();
+
+const initialActivities = [
+  { id: 1, description: 'Do dishes', completed: true },
+  { id: 2, description: 'Do groceries', completed: false },
+  { id: 3, description: 'Do laundry', completed: false },
+];
+
+
 function App () {
+  const [toDoList, setToDoList] = useState(initialActivities);
+
   return (
   <>  
-    <Grid container spacing={2}>
+    <Grid container spacing={3}>
       <BrowserRouter>
         <Grid md={3} >
           <ul className="nav-bar">
           <ol>
-            <Link to="/">Home</Link>
+            <NavLink to="/" activeClassName="active">Home</NavLink>
           </ol>
           <ol>
-            <Link to="/todo">To dos</Link>
+            <NavLink to="/todo" activeClassName="active">To dos</NavLink>
           </ol>
           <ol>
-            <Link to="/about">About us</Link>
+            <NavLink to="/about" activeClassName="active">About us</NavLink>
           </ol>
           <ol>
-            <Link to="/contact">Contact us</Link>
+            <NavLink to="/contact" activeClassName="active">Contact us</NavLink>
           </ol>
           </ul>
         </Grid>
 
         <Grid md={9} >
+          <GlobalContext.Provider value= {[toDoList, setToDoList]}> 
+
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="Home" element={<Home />} />
@@ -39,6 +54,8 @@ function App () {
             <Route path="ToDo" element={<ToDo />} />
             <Route path="Contact" element={<Contact />} />
           </Routes>
+        </GlobalContext.Provider>
+
         </Grid>
 
       </BrowserRouter>
