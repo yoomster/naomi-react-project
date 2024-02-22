@@ -1,49 +1,14 @@
  :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  
   line-height: 1.5;
 
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
   
-  font-synthesis: none;
+  /* font-synthesis: none;
   text-rendering: optimizeLegibility;
 
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
  }
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-.round-button{
-  color: #1976d2;
-  background-color: transparent;
-  width: 50px; 
-  height: 50px; 
-  align-items: center;
-  border: 1px solid rgba(25, 118, 210, 0.5);
-  padding: 5px 12px;
-  box-sizing: border-box;
-  position: relative;
-  vertical-align: middle;
-  cursor: pointer; 
-  border-radius: 50%; 
-  display: inline-flex; 
-  align-items: center; 
-}
-
-.round-button:hover{
-  text-decoration: none;
-  border: 1px solid #1976d2;
-}
-
-.round-button .material-icons {
-  margin-right: 25px; /* spacing between icon and text */
-}
-
-#user-input {
-  width : 100%;
-  padding : 0.5rem ;
-}

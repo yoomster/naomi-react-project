@@ -11,16 +11,16 @@ import './App.css'
 
 function App () {
   return (
-    <>  
+  <>  
     <Grid container spacing={2}>
       <BrowserRouter>
-        <Grid md={4} >
+        <Grid md={3} >
           <ul className="nav-bar">
           <ol>
-            <Link to="/home">Home</Link>
+            <Link to="/">Home</Link>
           </ol>
           <ol>
-            <Link to="/todo">To Do list</Link>
+            <Link to="/todo">To dos</Link>
           </ol>
           <ol>
             <Link to="/about">About us</Link>
@@ -31,7 +31,7 @@ function App () {
           </ul>
         </Grid>
 
-        <Grid md={8} >
+        <Grid md={9} >
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="Home" element={<Home />} />
